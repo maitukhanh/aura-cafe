@@ -1,0 +1,36 @@
+# YÊU CẦU DỰ ÁN: HỆ THỐNG QUẢN LÝ & BÁN HÀNG CÀ PHÊ (PREMIUM FLOW)
+
+Tôi muốn xây dựng ứng dụng Full-stack bằng Next.js 15 (App Router), TailwindCSS và Prisma (SQLite) theo luồng tối ưu cho Windows (Không quyền Admin).
+
+## 1. MÔI TRƯỜNG VÀ CÔNG CỤ (QUAN TRỌNG)
+- Sử dụng Node.js v22.14.0 bản Portable (Tải vào thư mục ./tools/node).
+- Tất cả lệnh thực thi phải dùng Command Prompt (CMD), không dùng PowerShell.
+- Sử dụng SQLite làm Database (file local) để có thể chạy ngay lập tức.
+
+## 2. CẤU TRÚC DATABASE (Dùng SQLite)
+Model tương quan:
+- Category (Danh mục): id, name.
+- Unit (Đơn vị tính): id, name.
+- Product (Sản phẩm): id, name, price, image, stock (mặc định 10), categoryId, unitId.
+
+## 3. CÁC TÍNH NĂNG CHÍNH
+### A. Quản trị (Admin Dashboard - /admin)
+- CRUD Danh mục (vd: Cà phê, Trà, Bánh).
+- CRUD Đơn vị tính (vd: Ly, Gói, Cái).
+- CRUD Sản phẩm: Có form thêm mới (dropdown chọn Danh mục/Đơn vị) và danh sách hiển thị kèm bộ lọc.
+
+### B. Bán hàng (Storefront - /)
+- Phong cách: Sang trọng, tông màu Nâu đậm (Coffee Bean), Vàng kem (Cream), Vàng kim (Gold).
+- Trang chủ: Banner "Tỉnh thức", Menu dạng lưới (Grid) đẹp mắt.
+- Giỏ hàng (Cart): Drawer bên phải, cho phép thêm/xóa/sửa số lượng, lưu vào LocalStorage.
+- Bộ lọc: Cho phép lọc món theo Danh mục ngay trên trang chủ.
+
+## 4. QUY TRÌNH THỰC HIỆN CẦN TUÂN THỦ
+1. Thiết lập Node.js Portable v22 và kích hoạt PATH trong CMD.
+2. Khởi tạo dự án Next.js 15 trong thư mục hiện hành.
+3. Cài đặt Prisma, cấu hình schema dùng provider = "sqlite".
+4. Chạy 'npx prisma db push' và 'npx prisma generate' ngay sau khi tạo schema.
+5. Xây dựng Server Actions cho CRUD.
+6. Xây dựng UI Admin và UI Storefront với thư viện Lucide-react cho icon.
+
+Hãy bắt đầu thực hiện bước 1 ngay tại thư mục mới này!

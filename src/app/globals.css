@@ -1,0 +1,33 @@
+@import "tailwindcss";
+
+:root {
+  --background: #fdfaf6;
+  --foreground: #3d2b1f;
+  --coffee-bean: #3d2b1f;
+  --cream: #fdf5e6;
+  --gold: #c5a059;
+  --gold-hover: #a68140;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-coffee: var(--coffee-bean);
+  --color-cream: var(--cream);
+  --color-gold: var(--gold);
+  --color-gold-hover: var(--gold-hover);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+}
+
+/* Custom transitions and styles */
+.btn-gold {
+  @apply bg-gold text-white px-4 py-2 rounded-md transition-colors hover:bg-gold-hover;
+}
+
+.card {
+  @apply bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow;
+}
