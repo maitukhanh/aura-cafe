@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import { X, Plus, Minus, Trash2, ShoppingBag } from "lucide-react";
 import { useCart } from "@/context/CartContext";
 
@@ -99,12 +100,13 @@ export default function CartDrawer({ isOpen, onClose }: CartDrawerProps) {
                                 <span className="text-gray-600 font-medium uppercase tracking-wider">Tổng cộng</span>
                                 <span className="text-2xl font-bold text-coffee">{total.toLocaleString("vi-VN")}đ</span>
                             </div>
-                            <button
-                                className="w-full bg-coffee text-gold font-bold py-4 rounded-md shadow-lg hover:shadow-xl transition-all active:scale-[0.98]"
-                                onClick={() => alert("Chức năng thanh toán đang phát triển")}
+                            <Link
+                                href="/checkout"
+                                onClick={onClose}
+                                className="block w-full bg-coffee text-gold font-bold py-4 rounded-md shadow-lg hover:shadow-xl transition-all active:scale-[0.98] text-center"
                             >
                                 THANH TOÁN NGAY
-                            </button>
+                            </Link>
                         </div>
                     )}
                 </div>

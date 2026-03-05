@@ -6,7 +6,7 @@ import {
     SquareStack,
     Coffee,
     ArrowLeft,
-    Settings
+    ClipboardList,
 } from "lucide-react";
 
 export default function AdminLayout({
@@ -53,6 +53,13 @@ export default function AdminLayout({
                     >
                         <Coffee className="w-5 h-5" />
                         <span className="font-medium">Sản phẩm</span>
+                    </Link>
+                    <Link
+                        href="/admin/orders"
+                        className="flex items-center gap-3 p-3 rounded-lg hover:bg-white/5 text-gray-400 hover:text-gold transition-all"
+                    >
+                        <ClipboardList className="w-5 h-5" />
+                        <span className="font-medium">Đơn hàng</span>
                     </Link>
                 </nav>
 
